@@ -198,7 +198,7 @@ $: if(players[0].shots>players[1].shots) {
         p1.style.color = "red";
         p2.style.color = "black";
     }
-} else if(players[1].score>players[0].score) {
+} else if(players[1].shots>players[0].shots) {
     const p1 = document.getElementById("p1-shots");
     const p2 = document.getElementById("p2-shots");
     if(p1 && p2) {
