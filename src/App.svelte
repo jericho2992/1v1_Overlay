@@ -230,6 +230,7 @@ WsSubscribers.subscribe('game', 'match_destroyed', (d)=>{
     flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: center;
+    background: none;
   }
   .clock {
     background-color: black;
