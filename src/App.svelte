@@ -200,7 +200,7 @@ $: if(players[0].shots>players[1].shots) {
     }
 } else if(players[1].score>players[0].score) {
     const p1 = document.getElementById("p1-shots");
-    const p2 = document.getElementById("p2-sshots");
+    const p2 = document.getElementById("p2-shots");
     if(p1 && p2) {
         p2.style.color = "red";
         p1.style.color = "black";
@@ -215,7 +215,7 @@ $: if(players[0].saves>players[1].saves) {
         p1.style.color = "red";
         p2.style.color = "black";
     }
-} else if(players[1].score>players[0].score) {
+} else if(players[1].saves>players[0].saves) {
     const p1 = document.getElementById("p1-saves");
     const p2 = document.getElementById("p2-saves");
     if(p1 && p2) {
@@ -232,7 +232,7 @@ $: if(players[0].demos>players[1].demos) {
         p1.style.color = "red";
         p2.style.color = "black";
     }
-} else if(players[1].score>players[0].score) {
+} else if(players[1].demos>players[0].demos) {
     const p1 = document.getElementById("p1-demos");
     const p2 = document.getElementById("p2-demos");
     if(p1 && p2) {
