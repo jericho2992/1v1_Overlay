@@ -237,7 +237,7 @@ WsSubscribers.subscribe('game', 'match_destroyed', (d)=>{
   h1{
         margin: 0;
         font-size: 2.5rem;
-        padding: 0.35em;
+        padding: 0.5em 0.35em;
     }
     .stats-contain {
         position: fixed;

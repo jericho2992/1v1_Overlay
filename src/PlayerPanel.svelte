@@ -63,7 +63,7 @@
     h1{
         margin: 0;
         font-size: 2.5rem;
-        padding: 0.35em;
+        padding: 0.5em;
     }
     .p1-name-div {
         color: white;
