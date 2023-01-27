@@ -1,5 +1,6 @@
 <script>
   import PlayerPanel from "./PlayerPanel.svelte";
+  import { fade } from "svelte/transition";
   let players=[
     {
         name: "Blue",
@@ -210,7 +211,7 @@ WsSubscribers.subscribe('game', 'match_destroyed', (d)=>{
      <PlayerPanel bind:player={players[0]} bind:wins={t2Wins} bind:goals={teams[1].score}></PlayerPanel>
     {/if}
     {#if stats}
-        <div class='stats-contain'>
+        <div class='stats-contain' transition:fade="{{duration: 5000}}">
             <table>
                 <tr><th></th><th>{players[0].name}</th><th>{players[1].name}</th></tr>
                 <tr><td>Score</td><td>{players[0].score}</td><td>{players[1].score}</td></tr>
@@ -240,16 +241,22 @@ WsSubscribers.subscribe('game', 'match_destroyed', (d)=>{
         padding: 0.5em 0.35em;
     }
     .stats-contain {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         position: fixed;
-        left: 50%;
-        transform: translate(-50%, 0%);
-        bottom: 5%;
+        min-height: 200vh;
+        min-width: 100vw;
+        background-color: black;
+        z-index: -1;
     }
     table, th, td {
         font-size: 1.5em;
         padding: 0.7em;
     }
     table {
+        margin-top: 30vh;
         background-image: linear-gradient(-45deg, rgb(150, 150, 150), rgb(50, 50, 50));
         border-collapse: collapse;
         border-radius: 0.5em;
