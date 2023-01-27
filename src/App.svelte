@@ -1,6 +1,7 @@
 <script>
   import PlayerPanel from "./PlayerPanel.svelte";
   import { fade } from "svelte/transition";
+    import { identity } from "svelte/internal";
   let players=[
     {
         name: "Blue",
@@ -12,6 +13,7 @@
         name: "Orange",
         team: 1,
         boost: 33,
+        score: 0,
     }
   ];
   let teams = [
@@ -170,6 +172,75 @@ WsSubscribers.subscribe('game', 'match_ended', (d)=>{
 WsSubscribers.subscribe('game', 'match_destroyed', (d)=>{
     stats = false;
 });
+
+//score stats styling
+$: if(players[0].score>players[1].score) {
+    const p1 = document.getElementById("p1-score");
+    const p2 = document.getElementById("p2-score");
+    if(p1 && p2) {
+        p1.style.color = "red";
+        p2.style.color = "black";
+    }
+} else if(players[1].score>players[0].score) {
+    const p1 = document.getElementById("p1-score");
+    const p2 = document.getElementById("p2-score");
+    if(p1 && p2) {
+        p2.style.color = "red";
+        p1.style.color = "black";
+    }
+}
+
+//shots stats styling
+$: if(players[0].shots>players[1].shots) {
+    const p1 = document.getElementById("p1-shots");
+    const p2 = document.getElementById("p2-shots");
+    if(p1 && p2) {
+        p1.style.color = "red";
+        p2.style.color = "black";
+    }
+} else if(players[1].score>players[0].score) {
+    const p1 = document.getElementById("p1-shots");
+    const p2 = document.getElementById("p2-sshots");
+    if(p1 && p2) {
+        p2.style.color = "red";
+        p1.style.color = "black";
+    }
+}
+
+//saves stats styling
+$: if(players[0].saves>players[1].saves) {
+    const p1 = document.getElementById("p1-saves");
+    const p2 = document.getElementById("p2-saves");
+    if(p1 && p2) {
+        p1.style.color = "red";
+        p2.style.color = "black";
+    }
+} else if(players[1].score>players[0].score) {
+    const p1 = document.getElementById("p1-saves");
+    const p2 = document.getElementById("p2-saves");
+    if(p1 && p2) {
+        p2.style.color = "red";
+        p1.style.color = "black";
+    }
+}
+
+//demos stats styling
+$: if(players[0].demos>players[1].demos) {
+    const p1 = document.getElementById("p1-demos");
+    const p2 = document.getElementById("p2-demos");
+    if(p1 && p2) {
+        p1.style.color = "red";
+        p2.style.color = "black";
+    }
+} else if(players[1].score>players[0].score) {
+    const p1 = document.getElementById("p1-demos");
+    const p2 = document.getElementById("p2-demos");
+    if(p1 && p2) {
+        p2.style.color = "red";
+        p1.style.color = "black";
+    }
+}
+
 </script>
 
 <main>
@@ -210,14 +281,25 @@ WsSubscribers.subscribe('game', 'match_destroyed', (d)=>{
     </div>
      <PlayerPanel bind:player={players[0]} bind:wins={t2Wins} bind:goals={teams[1].score}></PlayerPanel>
     {/if}
-    {#if stats}
+    {#if stats && players[0].team===0}
         <div class='stats-contain' transition:fade="{{duration: 5000}}">
             <table>
                 <tr><th></th><th>{players[0].name}</th><th>{players[1].name}</th></tr>
-                <tr><td>Score</td><td>{players[0].score}</td><td>{players[1].score}</td></tr>
-                <tr><td>Shots</td><td>{players[0].shots}</td><td>{players[1].shots}</td></tr>
-                <tr><td>Saves</td><td>{players[0].saves}</td><td>{players[1].saves}</td></tr>
-                <tr><td>Demos</td><td>{players[0].demos}</td><td>{players[1].demos}</td></tr>
+                <tr><td>Score</td><td id="p1-score">{players[0].score}</td><td id="p2-score">{players[1].score}</td></tr>
+                <tr><td>Shots</td><td id="p1-shots">{players[0].shots}</td><td id="p2-shots">{players[1].shots}</td></tr>
+                <tr><td>Saves</td><td id="p1-saves">{players[0].saves}</td><td id="p2-saves">{players[1].saves}</td></tr>
+                <tr><td>Demos</td><td id="p1-demos">{players[0].demos}</td><td id="p2-demos">{players[1].demos}</td></tr>
+            </table>
+        </div>
+    {/if}
+    {#if stats && players[0].team===1}
+        <div class='stats-contain' transition:fade="{{duration: 5000}}">
+            <table>
+                <tr><th></th><th>{players[1].name}</th><th>{players[0].name}</th></tr>
+                <tr><td>Score</td><td id="p2-score">{players[1].score}</td><td id="p1-score">{players[0].score}</td></tr>
+                <tr><td>Shots</td><td id="p2-shots">{players[1].shots}</td><td id="p1-shots">{players[0].shots}</td></tr>
+                <tr><td>Saves</td><td id="p2-saves">{players[1].saves}</td><td id="p1-saves">{players[0].saves}</td></tr>
+                <tr><td>Demos</td><td id="p2-demos">{players[1].demos}</td><td id="p1-demos">{players[0].demos}</td></tr>
             </table>
         </div>
     {/if}
@@ -249,7 +331,7 @@ WsSubscribers.subscribe('game', 'match_destroyed', (d)=>{
         position: fixed;
         min-height: 200vh;
         min-width: 100vw;
-        background-color: black;
+        background-image: linear-gradient(to right, blue, black, orange);
         z-index: -1;
     }
     table, th, td {
