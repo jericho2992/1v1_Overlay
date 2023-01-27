@@ -67,11 +67,11 @@
     }
     .p1-name-div {
         color: white;
-        background-image: linear-gradient(-45deg, rgb(0, 0, 255), rgb(0, 0, 100));
+        background-image: linear-gradient(45deg, rgb(0, 0, 255), rgb(0, 0, 50));
     }
     .p2-name-div {
         color: white;
-        background-image: linear-gradient(-45deg, rgb(210, 140, 0), rgb(111, 54, 0));
+        background-image: linear-gradient(-45deg, rgb(210, 140, 0), rgb(60, 40, 0));
     }
     .p1-boost {
         display: flex;

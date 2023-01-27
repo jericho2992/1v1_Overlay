@@ -243,7 +243,7 @@ WsSubscribers.subscribe('game', 'match_destroyed', (d)=>{
         position: fixed;
         left: 50%;
         transform: translate(-50%, 0%);
-        bottom: 20%;
+        bottom: 5%;
     }
     table, th, td {
         font-size: 1.5em;
