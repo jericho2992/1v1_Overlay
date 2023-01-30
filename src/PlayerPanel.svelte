@@ -26,7 +26,11 @@
                 <div style="background: white; min-height: 0.5rem; min-width: {$bTween/100*22}vw"></div>               
             </div>
             <div class="p1-name-div">
-                <h1>{player.name}</h1>
+                {#if player.name.contains("rinz")}
+                    <h1>Stinky</h1>
+                {:else}
+                    <h1>{player.name}</h1>
+                {/if}
             </div>
         {:else}
             <div class="p2-boost">
