@@ -26,13 +26,8 @@
                 <div style="background: white; min-height: 0.5rem; min-width: {$bTween/100*22}vw"></div>               
             </div>
             <div class="p1-name-div">
-<<<<<<< HEAD
                 {#if player.name.contains("koolhof")}
                     <h1>Kohof 👉👈</h1>
-=======
-                {#if player.name.contains("rinz")}
-                    <h1>Stinky</h1>
->>>>>>> 648f563e9cb481a0800c24d8bf952f1093a039d7
                 {:else}
                     <h1>{player.name}</h1>
                 {/if}
