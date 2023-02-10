@@ -26,7 +26,7 @@
                 <div style="background: white; min-height: 0.5rem; min-width: {$bTween/100*22}vw"></div>               
             </div>
             <div class="p1-name-div">
-                {#if player.name.contains("koolhof")}
+                {#if player.name.toLowerCase().contains("koolhof")}
                     <h1>Kohof 👉👈</h1>
                 {:else}
                     <h1>{player.name}</h1>
@@ -37,7 +37,7 @@
                 <div style="background: white; min-height: 0.5rem; min-width: {$bTween/100*22}vw"></div>
             </div>
             <div class="p2-name-div">            
-                {#if player.name.contains("koolhof")}
+                {#if player.name.toLowerCase().contains("koolhof")}
                     <h1>Kohof 👉👈</h1>
                 {:else}
                     <h1>{player.name}</h1>
