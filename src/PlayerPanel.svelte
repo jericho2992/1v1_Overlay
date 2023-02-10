@@ -26,14 +26,22 @@
                 <div style="background: white; min-height: 0.5rem; min-width: {$bTween/100*22}vw"></div>               
             </div>
             <div class="p1-name-div">
-                <h1>{player.name}</h1>
+                {#if player.name.contains("koolhof")}
+                    <h1>Kohof 👉👈</h1>
+                {:else}
+                    <h1>{player.name}</h1>
+                {/if}
             </div>
         {:else}
             <div class="p2-boost">
                 <div style="background: white; min-height: 0.5rem; min-width: {$bTween/100*22}vw"></div>
             </div>
             <div class="p2-name-div">            
-                <h1>{player.name}</h1>
+                {#if player.name.contains("koolhof")}
+                    <h1>Kohof 👉👈</h1>
+                {:else}
+                    <h1>{player.name}</h1>
+                {/if}
             </div>
         {/if}
     </div>
