@@ -285,10 +285,10 @@ $: if(players[0].demos>players[1].demos) {
         <div class='stats-contain' transition:fade="{{duration: 5000}}">
             <table>
                 <tr><th></th><th>{players[0].name}</th><th>{players[1].name}</th></tr>
-                <tr><td>Score</td><td id="p1-score">{players[0].score}</td><td id="p2-score">{players[1].score}</td></tr>
-                <tr><td>Shots</td><td id="p1-shots">{players[0].shots}</td><td id="p2-shots">{players[1].shots}</td></tr>
-                <tr><td>Saves</td><td id="p1-saves">{players[0].saves}</td><td id="p2-saves">{players[1].saves}</td></tr>
-                <tr><td>Demos</td><td id="p1-demos">{players[0].demos}</td><td id="p2-demos">{players[1].demos}</td></tr>
+                <tr><td id="p1-score">{players[0].score}</td><td>Score</td><td id="p2-score">{players[1].score}</td></tr>
+                <tr><td id="p1-shots">{players[0].shots}</td><td>Shots</td><td id="p2-shots">{players[1].shots}</td></tr>
+                <tr><td id="p1-saves">{players[0].saves}</td><td>Saves</td><td id="p2-saves">{players[1].saves}</td></tr>
+                <tr><td id="p1-demos">{players[0].demos}</td><td>Demos</td><td id="p2-demos">{players[1].demos}</td></tr>
             </table>
         </div>
     {/if}
@@ -296,10 +296,10 @@ $: if(players[0].demos>players[1].demos) {
         <div class='stats-contain' transition:fade="{{duration: 5000}}">
             <table>
                 <tr><th></th><th>{players[1].name}</th><th>{players[0].name}</th></tr>
-                <tr><td>Score</td><td id="p2-score">{players[1].score}</td><td id="p1-score">{players[0].score}</td></tr>
-                <tr><td>Shots</td><td id="p2-shots">{players[1].shots}</td><td id="p1-shots">{players[0].shots}</td></tr>
-                <tr><td>Saves</td><td id="p2-saves">{players[1].saves}</td><td id="p1-saves">{players[0].saves}</td></tr>
-                <tr><td>Demos</td><td id="p2-demos">{players[1].demos}</td><td id="p1-demos">{players[0].demos}</td></tr>
+                <tr><td id="p2-score">{players[1].score}</td><td>Score</td><td id="p1-score">{players[0].score}</td></tr>
+                <tr><td id="p2-shots">{players[1].shots}</td><td>Shots</td><td id="p1-shots">{players[0].shots}</td></tr>
+                <tr><td id="p2-saves">{players[1].saves}</td><td>Saves</td><td id="p1-saves">{players[0].saves}</td></tr>
+                <tr><td id="p2-demos">{players[1].demos}</td><td>Demos</td><td id="p1-demos">{players[0].demos}</td></tr>
             </table>
         </div>
     {/if}

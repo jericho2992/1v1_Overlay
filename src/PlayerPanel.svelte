@@ -27,7 +27,7 @@
             </div>
             <div class="p1-name-div">
                 {#if player.name.toLowerCase().includes("koolhof")}
-                    <h1>Kohof 👉👈</h1>
+                    <h1>GoatHof 🐐</h1>
                 {:else}
                     <h1>{player.name}</h1>
                 {/if}
@@ -38,7 +38,7 @@
             </div>
             <div class="p2-name-div">            
                 {#if player.name.toLowerCase().includes("koolhof")}
-                    <h1>Kohof 👉👈</h1>
+                    <h1>GoatHof 🐐</h1>
                 {:else}
                     <h1>{player.name}</h1>
                 {/if}
